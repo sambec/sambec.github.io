@@ -63,3 +63,63 @@ a {
 a:hover {
     text-decoration: underline;
 }
+/* Section "À propos de moi" */
+#about {
+    margin: 40px auto; /* Centrer et espacer */
+    max-width: 1200px; /* Largeur max pour limiter l'espace */
+    padding: 20px;
+    text-align: center; /* Centrer le texte */
+}
+
+#about h2 {
+    font-size: 2rem;
+    color: white; /* Couleur du titre */
+    margin-bottom: 20px; /* Espace sous le titre */
+    font-weight: 700;
+}
+
+.about-cards {
+    display: flex; /* Disposer les cartes en ligne */
+    flex-wrap: wrap; /* Permettre le retour à la ligne si l'espace manque */
+    gap: 20px; /* Espacement entre les cartes */
+    justify-content: center; /* Centrer les cartes */
+}
+
+.about-card {
+    background-color: #333; /* Fond sombre */
+    color: white; /* Texte blanc */
+    border: 1px solid #444; /* Bordure subtile */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px; /* Espace interne */
+    width: 100%; /* Largeur par défaut */
+    max-width: 350px; /* Largeur max pour les cartes */
+    text-align: left; /* Aligner le texte à gauche dans chaque carte */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    transition: transform 0.2s ease-in-out; /* Animation pour hover */
+}
+
+.about-card:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre */
+}
+
+.about-card h3 {
+    font-size: 1.2rem;
+    color: yellow; /* Couleur des titres des cartes */
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    line-height: 1.5; /* Hauteur de ligne pour lisibilité */
+    margin-bottom: 10px;
+}
+
+.about-card a {
+    color: yellow; /* Lien en jaune */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.about-card a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
