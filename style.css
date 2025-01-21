@@ -339,14 +339,29 @@ a:hover {
     border-radius: 50%;
     z-index: 1;
 }
+
+
+/* Fallback pour anciens navigateurs */
+@supports not (transform: translateX(-50%)) {
+    .timeline::before {
+      display: none;
+    }
+    .timeline-item {
+      width: 100%;
+      left: 0;
+    }
+  }
 /* Responsive styling for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .timeline-item {
         width: 100%;
+        left: 0; 
         text-align: center;
+        margin-bottom: 30px;
     }
     .timeline-item .content {
         float: none;
         transform: none;
     }
+
 }
