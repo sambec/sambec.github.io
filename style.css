@@ -25,6 +25,59 @@ header p {
     font-size: 1.2rem;
     color: #8b949e;
 }
+
+header.social-links {
+    display: flex;
+    gap: 15px;
+    background-color: #b4b2b2;
+    
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.social-links a img:hover {
+    transform: scale(1.1);
+}
+.accordion-nav {
+    position: relative;
+    width: 100%;
+    background-color: #0d1117;
+}
+.accordion-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #0d1117;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.accordion-toggle:hover {
+    background-color: #555;
+}
+.accordion-content {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+}
+.accordion-content a {
+    color: #58a6ff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-top: 1px solid #555;
+}
+.accordion-content a:hover {
+    background-color: #444;
+}
 .container {
     padding: 20px;
 }
@@ -66,7 +119,7 @@ a:hover {
 /* Section "À propos de moi" */
 #about {
     margin: 40px auto; /* Centrer et espacer */
-    max-width: 1200px; /* Largeur max pour limiter l'espace */
+    max-width: 800px; /* Largeur max pour limiter l'espace */
     padding: 20px;
     text-align: center; /* Centrer le texte */
 }
@@ -108,7 +161,7 @@ a:hover {
 
 .about-card h3 {
     font-size: 1.2rem;
-    color: yellow; /* Couleur des titres des cartes */
+    color: whitesmoke; /* Couleur des titres des cartes */
     margin-bottom: 10px;
 }
 
@@ -125,4 +178,175 @@ a:hover {
 
 .about-card a:hover {
     text-decoration: underline; /* Soulignement au survol */
+}
+
+/*test*/
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    padding: 20px 0;
+    width: 90%;
+    max-width: 800px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    background-color: #00aaff; /* Line color */
+    /* transform: translateX(-50%); */
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    position: relative;
+    padding-top: 100px; /* Adjust this value to match the height of your header */
+}
+
+/* .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #58a6ff;
+} */
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin: 30px 0; */
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start off-screen */
+    transition: transform 0.5s ease, opacity 0.5s ease; 
+    position: relative;
+    margin: 20px 0;
+    width: 500px;
+    padding: 10px;
+    
+}
+
+/* Content styling */
+.timeline-item .content {
+    background-color: #444;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Left-aligned items */
+.timeline-item.left {
+    right: 22%;
+    text-align: justify;
+}
+
+.timeline-item.left .content {
+    float: right;
+    transform: translateX(-20px); /* Adjust to align content properly */
+}
+
+/* Right-aligned items */
+.timeline-item.right {
+    left: 50%;
+    text-align: justify;
+}
+
+.timeline-item.right .content {
+    float: left;
+    transform: translateX(20px); /* Adjust to align content properly */
+}
+
+
+.timeline-item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Back to normal position */
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre */
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    /* background-color: #fff;
+    border: 1px solid #ddd; */
+    border-radius: 8px;
+    padding: 20px;
+    width: 500px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    margin: 0 20px;
+    /*transition: background-color 0.3s ease, box-shadow 0.3s ease; Smooth hover effect*/
+    background-color: #333; /* Fond sombre */
+    color: white; /* Texte blanc */
+    border: 1px solid #444; /* Bordure subtile */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    transition: transform 0.2s ease-in-out; /* Animation pour hover */
+    text-align: justify;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #58a6ff;
+    text-align: center;
+}
+
+/* On peut aligner à droite et à gauche mais ça ne rend pas vraiment bien */
+/* .timeline-item.right h3 {
+    text-align: left;
+}
+
+.timeline-item.left h3 {
+    text-align: right;
+} */
+
+.timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.5; /* Hauteur de ligne pour lisibilité */
+    margin-bottom: 10px;
+}
+.timeline-content a {
+    color: whitesmoke; /* Lien en jaune */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.timeline-content a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #58a6ff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        text-align: center;
+    }
+    .timeline-item .content {
+        float: none;
+        transform: none;
+    }
 }

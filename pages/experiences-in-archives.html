@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Sarah Ambec</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/mechanics/mec-1/mec69.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2005/08/24/mec69.html" target="_blank" title="Star Wars Millennium Falcon"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Star Wars Millennium Falcon" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <style>
+        header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0d1117;
+    }
+        body {
+    padding-top: 120px; /* Ensure content starts below the fixed header */
+    }
+
+    </style>
+    <script>
+        function toggleAccordion() {
+            const content = document.querySelector('.accordion-content');
+            content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <script>
+        function revealTimelineItems() {
+            const items = document.querySelectorAll('.timeline-item');
+            const windowHeight = window.innerHeight;
+            items.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < windowHeight - 50) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealTimelineItems);
+        revealTimelineItems();
+    </script>
+    
+    
+        <header>
+            <div class="accordion-nav">
+                <button class="accordion-toggle" onclick="toggleAccordion()">☰ Menu</button>
+                <div class="accordion-content">
+                    <a href="../index.html">Home</a>
+                    <!-- <a href="archiving-mmos.html">Archiver des MMORPGs</a> -->
+                    <a href="experiences-in-archives.html">Experiences en archives</a>
+                </div>
+            </div>
+            <h2>Mes expériences en archives</h2>
+        </header>
+        
+        <main class="container">
+            
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Ecole nationale des Chartes</h3>
+                            <p><strong>2025</strong> - Master Archives et Technologies du numérique appliquées à l'histoire (TNAH) à l'Ecole nationale des Chartes.</p>
+                            <p>Durant ce master j'ai étudier les normes internationales de classement et de conservation des archives, les différents outils utilisés pour le traitement et la valorisation des archives.</p>
+                            <p>Ce parcours technique m'a permis d'avoir un nouveau regard sur les archives au-delà des archives papiers, vers les archives nativement numériques et les nouveaux objets patrimoniaux. Ce master a aussi été l'occasion d'explorer les différents usages de l'IA dans le cadre des SHS et de faire tourner quelques modèles d'OCR et d'HTR sur des archives.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Centre Pompidou</h3>
+                            <p><strong>2024</strong> - Stage dans le cadre du projet MAVEX mémoire audiovisuelle des expositions du Centre Pompidou au pôle recherche de la Bibliothèque Kandinksy.</p>
+                            <p>J'ai réalisé une modélisation conceptuelle de base de donnée en LRM adaptées à des archives audiovisuelles et j'ai envisagé un data mapping en vue d'un potentiel transfert de données, tout mon expérience est racontée dans ce billet de blog : <a href="https://mavex.hypotheses.org/3062">https://mavex.hypotheses.org/3062</a>.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Web Archiving Conference 2024 - IIPC</h3>
+                            <p><strong>2024</strong> - J'ai eu la chance de participer à la WAC 2024 organisée par l'IIPC et tenue à la BnF, ainsi qu'à l'Early Summer School sur les archives du web.</p>
+                            <p>Dans le cadre de la Summer School avant la conférence j'ai pu présenter les premiers résultats de mon mémoire sur l'archivage des MMORPGs, ce mémoire est déposé sur HAL.  <!--à cette adresse : <a href="hal:/">hal/</a> --> </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Sciences Po</h3>
+                            <p><strong>2023</strong> - CDD aux archives de la recherche de Sciences Po, conditionnement, tri et inventaire des archives du CEVIPOF et des archives de Jean-Paul Fitoussi.</p> 
+                            <p>J'ai participé à l'inventaire des archives des enquêtes qualitatives du CEVIPOF qui est aujourd'hui disponible sur le site des archives à cette adresse : <a href="https://archives.sciencespo.fr/ark:/46513/18488">https://archives.sciencespo.fr/ark:/46513/18488</a></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Archives Nationales</h3>
+                            <p><strong>2023</strong> - Stage d'archivistique, traitement, conditionnement, inventaire du supplément de fonds Sadi Carnot au sein du département des archives privées.</p>
+                            <p>J'ai crée un plan de classement qui a servi à rédiger cet inventaire disponible sur le site des Archives nationales : <a href="https://www.siv.archives-nationales.culture.gouv.fr/siv/rechercheconsultation/consultation/ir/consultationIR.action?irId=FRAN_IR_004285">https://www.siv.archives-nationales.culture.gouv.fr/siv/rechercheconsultation/consultation/ir/</a></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Sorbonne Université</h3>
+                            <p><strong>2021</strong> - Mon mémoire de master de recherche en histoire contemporaine porte sur Arthur Giry, un historien et archiviste du XIXe siècle.</p>
+                            <p>Dans le cadre de la rédaction de ce mémoire j'ai réalisé des recherches dans de nombreuses archives parisiennes différentes, des Archives nationales aux archives de la Préfecture de police, et j'ai appris à chercher et trouver parmis ces fonds. Ce mémoire est déposé sur HAL.  <!--à cette adresse : <a href="hal:/">hal/</a> --></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Archives Départementales de Haute-Garonne</h3>
+                            <p><strong>2019</strong> - Préparation d'un parcours de visite pour les journées du patrimoine aux AD31.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        
+        <footer class="footer">
+            <p>Hébergé par <a href="https://github.com/">GitHub</a> | 🌟 Conçu par Sarah Ambec</p>
+        </footer>
+        <script>
+            function revealTimelineItems() {
+                const items = document.querySelectorAll('.timeline-item');
+                const windowHeight = window.innerHeight;
+                items.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    if (itemTop < windowHeight - 50) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+    
+            // Listen for scroll events
+            window.addEventListener('scroll', revealTimelineItems);
+    
+            // Trigger the animation on load
+            revealTimelineItems();
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Sarah Ambec</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/mechanics/mec-1/mec69.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2005/08/24/mec69.html" target="_blank" title="Star Wars Millennium Falcon"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Star Wars Millennium Falcon" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <script>
+        function toggleAccordion() {
+            const content = document.querySelector('.accordion-content');
+            content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <div class="accordion-nav">
+        <button class="accordion-toggle" onclick="toggleAccordion()">☰ Menu</button>
+        <div class="accordion-content">
+            <a href="../index.html">Home</a>
+            <a href="archiving-mmos.html">Archiver des MMORPGs</a>
+            <a href="experiences-in-archives.html">Experiences en archives</a>
+        </div>
+    </div>
+        <header>
+            <h2>Comment archiver un jeu massivement multijoueur en ligne ?</h2>
+            <!-- <p>Archiviste - Doing my best to learn Python and XML</p> -->
+        </header>
+        
+        <main class="container">
+            <section id="about">
+                <div class="container about-container">
+                    <div id="description">
+                        <!-- Default content (French) -->
+                        <p></p>
+                    </div>
+                    <!-- Button to toggle between languages -->
+                    <button onclick="toggleLanguage()">🇬🇧</button>
+                </div>
+            </section>
+            <script>
+                // Store the translations
+                const translations = {
+                    en: `
+                        <p>My name is Sarah, and I am a student specializing in archiving, currently pursuing an M2 in Records Management and Digital Technologies Applied to History at the École des Chartes. I am interested in exploring digital technologies, and I am currently learning Python, XML, and web development to bring modern solutions to the field of archiving.</p>
+                        <p>📌 <strong>Currently:</strong> I am working with my classmates on a <strong>Flask application project</strong> as part of our coursework. The application aims to facilitate access to an SQL database and recommend the best movie adaptation for a given book. I don't yet have a repository for this project on my GitHub, but it's coming soon.</p>
+                        <p style="text-align: center;">🔗 You can check out my <a href="https://www.linkedin.com/in/sarah-ambec/" target="_blank">LinkedIn</a> if you're looking for a motivated and skilled e-archivist!</p>
+                    `,
+                    fr: `
+                        <p>Je m'appelle Sarah, je suis étudiante en archivistique en M2 Archives Technologies du Numérique Appliquées à l'Histoire à l'Ecole des Chartes. Je m'intéresse à l'exploration des technologies numériques, j'apprends actuellement Python, XML, et le développement web pour apporter des solutions modernes au domaine de l'archivistique.</p>
+                        <p>📌 <strong>Actuellement :</strong> Je travaille avec mes camarades sur une <strong>application Flask</strong> dans le cadre d'un projet de groupe, visant à faciliter l'accès à une base SQL. Cette application devrait nous permettre de recommender, pour un livre donné, la meilleure adaptation au cinéma. Je n'ai pas encore de repo pour ce projet sur mon GitHub mais ça arrive.</p>
+                        <p style="text-align: center;">🔗 Vous pouvez consulter mon <a href="https://www.linkedin.com/in/sarah-ambec/" target="_blank">LinkedIn</a> si vous cherchez une e-archiviste motivée et compétente !</p>
+                    `
+                };
+            
+                // Current language state
+                let currentLanguage = 'fr';
+            
+                // Function to toggle the language
+                function toggleLanguage() {
+                    const description = document.getElementById('description');
+                    currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+                    description.innerHTML = translations[currentLanguage];
+                    document.querySelector('button').innerText = currentLanguage === 'fr' ? '☰ Menu' : '☰ Menu';
+                }
+            </script>
+            
+            
+            <section>
+                <h2>Projets disponibles sur mon GitHub</h2>
+                <div class="repos">
+                    <div class="repo">
+                        <h3><a href="https://github.com/sambec/howtopython">howtopython</a></h3>
+                        <p>Un tutoriel court pour installer Python sur Windows, utiliser GitBash et créer des environnements Conda (avec miniconda).</p>
+                    </div>
+                    <div class="repo">
+                        <h3><a href="https://github.com/sambec/EncodingGiry">EncodingGiry</a></h3>
+                        <p>Un projet de codage XML sur les correspondances d'Arthur Giry lors de la rédaction du <i>Manuel de Diplomatique</i> en 1894. Application d'une DTD, création d'un ODD puis RNG et ransformation en HTML avec schéma en XSLT.</p>
+                    </div>
+                    <div class="repo">
+                        <h3><a href="https://github.com/sambec/tic-tac-toe">tic-tac-toe</a></h3>
+                        <p>Un jeu de morpion codé en Python avec l'aide de ChatGPT 4.0. Petit exercice pour tester l'utilisation de l'IA comme assitant en programmation Python.</p>
+                    </div>
+                    <div class="repo">
+                        <h3><a href="https://github.com/sambec/wikidata-retrieve">wikidata-retrieve</a></h3>
+                        <p>Une application Flask pour interroger l'API de manière automatisée et afficher des données de Wikidata.</p>
+                    </div>
+                    <div class="repo">
+                        <h3><a href="https://github.com/sambec/sambec.github.io">sambec.github.io</a></h3>
+                        <p>Le code source de cette page GitHub personnalisée en HTML et CSS. Premier projet de création d'une page avec GitHub.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Hébergé par <a href="https://github.com/">GitHub</a> | 🌟 Conçu par Sarah Ambec</p>
+        </footer>
+    </body>
+    </html>
