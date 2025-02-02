@@ -42,40 +42,66 @@
         <section id="about">
             <div class="container about-container">
                 <h2>Hello there!</h2>
+                <div class="toggle-container">
+                    <input type="checkbox" id="languageToggle" class="toggle-input" onclick="toggleLanguage()">
+                    <label for="languageToggle" class="toggle-label">
+                        <span class="toggle-inner"></span>
+                        <span class="toggle-switch"></span>
+                    </label>
+                </div>
                 <div id="description">
                     <!-- Default content (French) -->
                     <p>Je m'appelle Sarah, je suis étudiante en archivistique en M2 Archives Technologies du Numérique Appliquées à l'Histoire (TNAH) à l'Ecole des Chartes. Je m'intéresse à l'exploration des technologies numériques, j'apprends actuellement Python, XML, et le développement web pour apporter des solutions modernes au domaine de l'archivistique.</p>
                     <p>📌 <strong>Actuellement :</strong> Je travaille avec mes camarades sur une <strong>application Flask</strong> dans le cadre d'un projet de groupe, visant à faciliter l'accès à une base SQL. Cette application devrait nous permettre de recommander, pour un livre donné, sa meilleure adaptation au cinéma: <a href="https://github.com/sambec/adapte-moi">https://github.com/sambec/adapte-moi</a>.</p>
                     <p style="text-align: center;">🔗 Vous pouvez consulter mon <a href="https://www.linkedin.com/in/sarah-ambec/" target="_blank">LinkedIn</a> si vous cherchez une e-archiviste motivée et compétente !</p>
-                </div>
+                <!-- </div> -->
                 <!-- Button to toggle between languages -->
-                <button onclick="toggleLanguage()">🇬🇧</button>
-            </div>
+                <!-- <button id="languageButton" onclick="toggleLanguage()">🇬🇧</button> -->
+            <!-- </div> -->
+             <!-- Toggle Switch -->
+
         </section>
         <script>
             // Store the translations
             const translations = {
                 en: `
                     <p>My name is Sarah, and I am a student specializing in archiving, currently pursuing an M2 in Records Management and Digital Technologies Applied to History at the École des Chartes. I am interested in exploring digital technologies, and I am currently learning Python, XML, and web development to bring modern solutions to the field of archiving.</p>
-                    <p>📌 <strong>Currently:</strong> I am working with my classmates on a <strong>Flask application</strong> as part of our coursework. The application aims to facilitate access to an SQL database and recommend the best movie adaptation for a given book.</p>
+                    <p>📌 <strong>Currently:</strong> I am working with my classmates on a <strong>Flask application</strong> as part of our coursework. The application aims to facilitate access to an SQL database and recommend the best movie adaptation for a given book :<a href="https://github.com/sambec/adapte-moi">https://github.com/sambec/adapte-moi</a>.</p>
                     <p style="text-align: center;">🔗 You can check out my <a href="https://www.linkedin.com/in/sarah-ambec/" target="_blank">LinkedIn</a> if you're looking for a motivated and skilled e-archivist!</p>
                 `,
                 fr: `
                     <p>Je m'appelle Sarah, je suis étudiante en archivistique en M2 Archives Technologies du Numérique Appliquées à l'Histoire (TNAH) à l'Ecole des Chartes. Je m'intéresse à l'exploration des technologies numériques, j'apprends actuellement Python, XML, et le développement web pour apporter des solutions modernes au domaine de l'archivistique.</p>
-                    <p>📌 <strong>Actuellement :</strong> Je travaille avec mes camarades sur une <strong>application Flask</strong> dans le cadre d'un projet de groupe, visant à faciliter l'accès à une base SQL. Cette application devrait nous permettre de recommander, pour un livre donné, la meilleure adaptation au cinéma.</p>
+                    <p>📌 <strong>Actuellement :</strong> Je travaille avec mes camarades sur une <strong>application Flask</strong> dans le cadre d'un projet de groupe, visant à faciliter l'accès à une base SQL. Cette application devrait nous permettre de recommander, pour un livre donné, sa meilleure adaptation au cinéma: <a href="https://github.com/sambec/adapte-moi">https://github.com/sambec/adapte-moi</a>.</p>
                     <p style="text-align: center;">🔗 Vous pouvez consulter mon <a href="https://www.linkedin.com/in/sarah-ambec/" target="_blank">LinkedIn</a> si vous cherchez une e-archiviste motivée et compétente !</p>
                 `
             };
         
-            // Current language state
-            let currentLanguage = 'fr';
-        
+                    // Function to toggle the language
+            // function toggleLanguage() {
+            //     const description = document.getElementById('description');
+            //     const button = document.getElementById('languageButton');
+
+            //     // Toggle the content and button text
+            //     if (button.textContent === '🇬🇧') {
+            //         description.innerHTML = translations.en;
+            //         button.textContent = '🇫🇷';
+            //     } else {
+            //         description.innerHTML = translations.fr;
+            //         button.textContent = '🇬🇧';
+            //     }
+            // }
+
             // Function to toggle the language
             function toggleLanguage() {
                 const description = document.getElementById('description');
-                currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
-                description.innerHTML = translations[currentLanguage];
-                document.querySelector('button').innerText = currentLanguage === 'fr' ? '☰ Menu' : '☰ Menu';
+                const toggle = document.getElementById('languageToggle');
+
+                // Set content based on the toggle state
+                if (toggle.checked) {
+                    description.innerHTML = translations.en;
+                } else {
+                    description.innerHTML = translations.fr;
+                }
             }
         </script>
         

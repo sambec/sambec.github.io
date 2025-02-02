@@ -180,7 +180,27 @@ h4 {
   margin: 20px 0;
   content: '🎮';
 }
+/* For PC screens */
+#opacitySlider {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    writing-mode: bt-lr; /* Ensure the slider is vertical */
+}
 
+/* For smaller screens (smartphones) */
+@media (max-width: 780px) {
+    #opacitySlider {
+        position: relative;
+        width: 100%;
+        transform: none;
+        writing-mode: horizontal-tb; /* Horizontal slider */
+        margin-top: 20px; /* Add space above */
+        margin-bottom: 20px; /* Add space below */
+    }
+}
 
       </style>
     
@@ -194,19 +214,33 @@ h4 {
 </head>
 <body>
     <div class="accordion-nav">
-        <button class="accordion-toggle" onclick="toggleAccordion()">☰ Menu</button>
-        <div class="accordion-content">
-            <a href="../index.html">Home</a>
-            <a href="archiving-mmos.html">Archiver des MMORPGs</a>
-            <a href="experiences-in-archives.html">Experiences en archives</a>
-        </div>
-    </div>
+      <button class="accordion-toggle" onclick="toggleAccordion()">☰ Menu</button>
+      <div class="accordion-content">
+          <a href="../index.html">Home</a>
+          <a href="archiving-mmos.html">Archiver des MMORPGs</a>
+          <a href="experiences-in-archives.html">Experiences en archives</a>
+      </div>
+  </div>
         <header>
             <h2>Comment archiver un jeu massivement multijoueur en ligne ?</h2>
             <p>Un défi aux frontières de l'éphémère et du durable</p>
             <!-- <p>Archiviste - Doing my best to learn Python and XML</p> -->
+            <div class="toggle-container">
+              <input type="checkbox" id="languageToggle" class="toggle-input" onclick="toggleLanguage()">
+              <label for="languageToggle" class="toggle-label">
+                  <span class="toggle-inner"></span>
+                  <span class="toggle-switch"></span>
+              </label>
+          </div>
+            <!-- <button class="translate-btn">🇬🇧 Translate to English</button> -->
+
         </header>
-        
+
+        <div class="subtitle_container">
+        <!-- Le curseur pour  -->
+        <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.849" orient="vertical"> 
+        </div>
+
         <main class="container">
             <div class="subtitle_container">
               <div class="border_container">
@@ -219,11 +253,12 @@ h4 {
                 </div>
             <section id="intro" class="section-box" class="timeline-content">
                 <h2>Introduction</h2>
-                <p>Les MMORPGs, ces mondes persistants qui n’existent qu’à travers les interactions de leurs joueurs et les infrastructures techniques qui les soutiennent, posent une question essentielle à l’archiviste : comment préserver ce qui est par essence mouvant, social, et contextuel ?
-                </p>
-                <p>
+                <p id="description">Les MMORPGs, ces mondes persistants qui n’existent qu’à travers les interactions de leurs joueurs et les infrastructures techniques qui les soutiennent, posent une question essentielle à l’archiviste : comment préserver ce qui est par essence mouvant, social, et contextuel ?
+                
+                <p id="researchText">
                   J'ai mené ces recherches sur l'archivage des MMORPGs pendant ma première année de Master Archives à l'Ecole nationale des Chartes en 2024. Mon mémoire est disponible sur HAL en libre accès : <a href="https://hal.science/hal-04895960">https://hal.science/hal-04895960</a>.
                 </p>
+              </p>
               </section>
              
               <div class="subtitle_container">
@@ -238,7 +273,7 @@ h4 {
 
               <section id="case-study" class="section-box">
                 <h2>Étude de cas : <em>New World</em></h2>
-                <p>Prenons <em>New World</em>, ce jeu, comme tant d’autres dans sa catégorie, n’est pas seulement un programme informatique ou une suite de règles. Il est aussi, et peut-être surtout, un théâtre d’interactions humaines, un terrain de sociabilités, et un espace où se redéfinit continuellement la notion même de jouabilité. Dans ce type de jeu, la jouabilité est une co-création : entre développeurs qui mettent en place des mécaniques, et joueurs qui, en expérimentant, transforment ces mécaniques en expériences sociales et culturelles. La notion de "métagaming", par exemple, illustre parfaitement ce phénomène où les joueurs, par leur inventivité, transcendent les règles établies pour imposer leurs propres normes stratégiques.
+                <p  id="caseStudy">Prenons <em>New World</em>, ce jeu, comme tant d’autres dans sa catégorie, n’est pas seulement un programme informatique ou une suite de règles. Il est aussi, et peut-être surtout, un théâtre d’interactions humaines, un terrain de sociabilités, et un espace où se redéfinit continuellement la notion même de jouabilité. Dans ce type de jeu, la jouabilité est une co-création : entre développeurs qui mettent en place des mécaniques, et joueurs qui, en expérimentant, transforment ces mécaniques en expériences sociales et culturelles. La notion de "métagaming", par exemple, illustre parfaitement ce phénomène où les joueurs, par leur inventivité, transcendent les règles établies pour imposer leurs propres normes stratégiques.
                 </p>
                 <!-- <blockquote>"La notion de 'métagaming' illustre comment les joueurs transcendent les règles pour imposer leurs propres normes stratégiques."</blockquote> -->
               </section>
@@ -257,10 +292,10 @@ h4 {
                 <h2>Défis d'archivage</h2>
                 <!-- <p><strong>Dynamique sociale :</strong> Les guildes, batailles épiques et sociabilités du jeu disparaissent rapidement.</p>
                 <p><strong>Transformations techniques :</strong> L’environnement, ses cartes et ses événements sont constamment mis à jour.</p> -->
-                <p>Archiver un MMORPG, c’est donc tenter de saisir l’insaisissable : ces dynamiques de groupe qui se forment et se déforment, ces guildes qui fédèrent des centaines de joueurs autour d’un objectif commun, ces batailles épiques qui mobilisent des stratégies soigneusement élaborées, mais qui disparaissent aussi vite qu’elles sont apparues. Dans New World, comme dans bien d’autres jeux, la richesse de l’expérience réside dans ces instants partagés, souvent éphémères, que la documentation classique ne parvient pas toujours à capturer.</p>
+                <p id="challengesText">Archiver un MMORPG, c’est donc tenter de saisir l’insaisissable : ces dynamiques de groupe qui se forment et se déforment, ces guildes qui fédèrent des centaines de joueurs autour d’un objectif commun, ces batailles épiques qui mobilisent des stratégies soigneusement élaborées, mais qui disparaissent aussi vite qu’elles sont apparues. Dans New World, comme dans bien d’autres jeux, la richesse de l’expérience réside dans ces instants partagés, souvent éphémères, que la documentation classique ne parvient pas toujours à capturer.
 
-                 <p>Mais ce n’est pas seulement l’interaction sociale qui pose problème à archiver. L’environnement même du jeu, ses cartes, ses monstres, ses événements réguliers et ses mises à jour, est en perpétuelle transformation. Les serveurs se vident, les extensions remplacent des pans entiers de contenu, et ce qui faisait hier la spécificité d’un monde virtuel devient aujourd’hui une trace à peine perceptible. Les outils numériques, comme les bases de données communautaires ou les enregistrements audiovisuels, offrent des pistes pour documenter ces univers, mais ils révèlent aussi leurs limites : comment conserver l’essence d’un monde qui ne cesse de se redéfinir ?
-                  </p>
+                 <p id="challengesText2">Mais ce n’est pas seulement l’interaction sociale qui pose problème à archiver. L’environnement même du jeu, ses cartes, ses monstres, ses événements réguliers et ses mises à jour, est en perpétuelle transformation. Les serveurs se vident, les extensions remplacent des pans entiers de contenu, et ce qui faisait hier la spécificité d’un monde virtuel devient aujourd’hui une trace à peine perceptible. Les outils numériques, comme les bases de données communautaires ou les enregistrements audiovisuels, offrent des pistes pour documenter ces univers, mais ils révèlent aussi leurs limites : comment conserver l’essence d’un monde qui ne cesse de se redéfinir ?</p>
+                </p>
               </section>
 
               <div class="subtitle_container">
@@ -274,53 +309,69 @@ h4 {
                   </div>
               <section id="conclusion" class="section-box">
                 <h2>Conclusion</h2>
-                <p>Ce mémoire explore les défis méthodologiques et éthiques de l'archivage des MMORPGs, et invite à réfléchir au rôle des institutions et des communautés dans la sauvegarde de ces univers.</p>
+                <p id="conclusionText">Ce mémoire explore les défis méthodologiques et éthiques de l'archivage des MMORPGs, et invite à réfléchir au rôle des institutions et des communautés dans la sauvegarde de ces univers.</p>
                 <!-- <button class="translate-btn">🇬🇧 Translate to English</button> -->
               </section>
             
         </main>
         <script>
-            // Traduction Français / Anglais
-            const translations = {
-              intro: "MMORPGs, these persistent worlds that exist only through player interactions and technical infrastructures, raise a fundamental question: how to preserve what is inherently fluid, social, and contextual?",
-              caseStudy: "<em>New World</em>, an MMORPG developed by Amazon Games in 2021, is a theater of human interactions where the notion of playability is constantly evolving.",
-              challenges: `
-                <div class="info-box">
-                  <p><strong>Social Dynamics:</strong> Guilds, epic battles, and social interactions quickly disappear.</p>
-                  <p><strong>Technical Transformations:</strong> The environment, maps, and events are constantly updated.</p>
-                </div>
-                Digital tools such as community databases and recordings provide insights but fail to capture the essence of an MMORPG's ever-changing universe.
-              `,
-              conclusion: "This master thesis explores the methodological and ethical challenges of archiving MMORPGs, inviting reflection on the role of institutions and communities in safeguarding these worlds."
-            };
-        
-            const translateBtn = document.querySelector(".translate-btn");
-            let isEnglish = false;
-        
-            translateBtn.addEventListener("click", () => {
-              isEnglish = !isEnglish;
-        
-              document.querySelector("#intro p").innerHTML = isEnglish ? translations.intro : `
-                Les MMORPGs, ces mondes persistants qui n’existent qu’à travers les interactions de leurs joueurs et les infrastructures techniques, posent une question essentielle : comment préserver ce qui est par essence mouvant, social, et contextuel ?
-              `;
-              document.querySelector("#case-study p").innerHTML = isEnglish ? translations.caseStudy : `
-                Prenons <em>New World</em>, un MMORPG développé par Amazon Games en 2021. Ce jeu est un théâtre d’interactions humaines où la notion de jouabilité est en constante évolution.
-              `;
-              document.querySelector("#challenges").innerHTML = isEnglish ? `<h2>Archiving Challenges</h2>${translations.challenges}` : `
-                <h2>Défis d'archivage</h2>
-                <div class="info-box">
-                  <p><strong>Dynamique sociale :</strong> Les guildes, batailles épiques et sociabilités du jeu disparaissent rapidement.</p>
-                  <p><strong>Transformations techniques :</strong> L’environnement, ses cartes et ses événements sont constamment mis à jour.</p>
-                </div>
-                <p>Les outils numériques, comme les bases de données communautaires et les enregistrements, offrent des pistes, mais ne capturent pas l’essence de l’univers mouvant d’un MMORPG.</p>
-              `;
-              document.querySelector("#conclusion p").innerHTML = isEnglish ? translations.conclusion : `
-                Ce mémoire explore les défis méthodologiques et éthiques de l'archivage des MMORPGs, et invite à réfléchir au rôle des institutions et des communautés dans la sauvegarde de ces univers.
-              `;
-        
-              translateBtn.textContent = isEnglish ? "🇫🇷 Traduire en français" : "🇬🇧 Translate to English";
-            });
-          </script>
+          // Accordion Toggle
+          function toggleAccordion() {
+              const content = document.querySelector('.accordion-content');
+              content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
+          }
+
+          const translations = {
+              fr: {
+                  description: "Les MMORPGs, ces mondes persistants qui n’existent qu’à travers les interactions de leurs joueurs et les infrastructures techniques, posent une question essentielle : comment préserver ce qui est par essence mouvant, social, et contextuel ?",
+                  caseStudy: "Prenons <em>New World</em>, ce jeu, comme tant d’autres dans sa catégorie, n’est pas seulement un programme informatique ou une suite de règles. Il est aussi, et peut-être surtout, un théâtre d’interactions humaines.",
+                  challengesText: "Archiver un MMORPG, c’est donc tenter de saisir l’insaisissable : ces dynamiques de groupe qui se forment et se déforment, ces guildes qui fédèrent des centaines de joueurs autour d’un objectif commun.",
+                  challengesText2: "Mais ce n’est pas seulement l’interaction sociale qui pose problème à archiver. L’environnement même du jeu, ses cartes, ses monstres, ses événements réguliers et ses mises à jour, est en perpétuelle transformation. Les serveurs se vident, les extensions remplacent des pans entiers de contenu, et ce qui faisait hier la spécificité d’un monde virtuel devient aujourd’hui une trace à peine perceptible. Les outils numériques, comme les bases de données communautaires ou les enregistrements audiovisuels, offrent des pistes pour documenter ces univers, mais ils révèlent aussi leurs limites : comment conserver l’essence d’un monde qui ne cesse de se redéfinir ?",
+                  conclusionText: "Ce mémoire explore les défis méthodologiques et éthiques de l'archivage des MMORPGs, et invite à réfléchir au rôle des institutions et des communautés dans la sauvegarde de ces univers.",
+                  researchText: "J'ai mené ces recherches sur l'archivage des MMORPGs pendant ma première année de Master Archives à l'Ecole nationale des Chartes en 2024. Mon mémoire est disponible sur HAL en libre accès : <a href='https://hal.science/hal-04895960'>https://hal.science/hal-04895960</a>."
+              },
+              en: {
+                  description: "MMORPGs, these persistent worlds that exist only through player interactions and technical infrastructures, raise a fundamental question: how to preserve what is inherently fluid, social, and contextual?",
+                  caseStudy: "Let’s take <em>New World</em>, a game like many others in its category. It is not just a computer program or a set of rules. It is also, and perhaps above all, a theater of human interactions.",
+                  challengesText: "Archiving an MMORPG means attempting to grasp the ungraspable: these group dynamics that form and dissolve, these guilds that bring together hundreds of players around a common goal.",
+                  challengesText2: "But it is not just social interaction that poses a challenge for archiving. The game environment itself, its maps, monsters, regular events, and updates, is in constant transformation. Servers empty out, extensions replace entire sections of content, and what made a virtual world unique yesterday becomes barely perceptible today. Digital tools, such as community databases or audiovisual recordings, offer ways to document these universes, but they also reveal their limitations: how can we preserve the essence of a world that is constantly redefining itself?",
+                  conclusionText: "This thesis explores the methodological and ethical challenges of archiving MMORPGs and invites reflection on the role of institutions and communities in safeguarding these universes.",
+                  researchText: "I conducted this research on archiving MMORPGs during my first year of the Master's program in Archives at the École nationale des Chartes in 2024. My thesis is available on HAL in open access: <a href='https://hal.science/hal-04895960'>https://hal.science/hal-04895960</a>."
+              }
+          };
+
+
+          function toggleLanguage() {
+              const toggle = document.getElementById('languageToggle');
+              const isEnglish = toggle.checked;
+
+              // Update content based on toggle state
+              document.getElementById('description').innerHTML = isEnglish ? translations.en.description : translations.fr.description;
+              document.getElementById('caseStudy').innerHTML = isEnglish ? translations.en.caseStudy : translations.fr.caseStudy;
+              document.getElementById('challengesText').innerHTML = isEnglish ? translations.en.challengesText : translations.fr.challengesText;
+              document.getElementById('challengesText2').innerHTML = isEnglish ? translations.en.challengesText2 : translations.fr.challengesText2;
+              document.getElementById('conclusionText').innerHTML = isEnglish ? translations.en.conclusionText : translations.fr.conclusionText;
+              document.getElementById('researchText').innerHTML = isEnglish ? translations.en.researchText : translations.fr.researchText;
+          }
+
+          // Concernant le curseur d'opacité :
+                    document.getElementById('opacitySlider').addEventListener('input', function() {
+              const value = this.value;
+              const sectionBoxes = document.querySelectorAll('.section-box');
+              sectionBoxes.forEach(box => {
+                  box.style.background = `rgba(240, 242, 243, ${value})`;
+                  if (value === '0') {
+                      box.style.color = 'white';
+                  } else {
+                      box.style.color = '#333'; // ou toute autre couleur par défaut
+                  }
+              });
+          });
+
+
+        </script>
+
+
         <footer class="footer">
             <p>Hébergé par <a href="https://github.com/">GitHub</a> | 🌟 Conçu par Sarah Ambec</p>
         </footer>
